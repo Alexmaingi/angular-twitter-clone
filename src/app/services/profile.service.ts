@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Profile } from '../Interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,5 +15,8 @@ export class ProfileService {
   }
   getuPosts(): Observable<any> {
     return this.http.get(`${this.userUrl}/posts`);
+  }
+  getuComment(): Observable<any> {
+    return this.http.get(`${this.userUrl}/comments`);
   }
 }
